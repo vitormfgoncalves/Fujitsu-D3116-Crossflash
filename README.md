@@ -83,8 +83,9 @@ For the card to work, it’s necessary to flash a modified SBR with the correct 
 10. Flash the new firmware to the card (`mptsas2.rom` is not strictly required, but recommended). This may take a few minutes:
 
     ```bash
-    $ sas2flsh -o -f 2308T207.ROM -b mptsas2.rom -c 0
+    $ sas2flsh -o -f 2308T207.ROM -b mptsas2.rom
     ```
+    **Note:** If the card gets stuck on “Initializing...”, restart the process and, in this step, flash the firmware without the BIOS: `sas2flsh -o -f 2308T207.ROM`. The BIOS is only required if you intend to boot the system from one of the drives connected to the card. Once inside the OS, it will work normally.
 
 11. Restore the SAS address (previously saved):
 
